@@ -4,36 +4,36 @@ const SignUp = () => {
     //variables
     const[FullName,SetFullName]=useState("")
     const[EmailAddress,SetEmailAddress]=useState("")
-    const[PhoneNumber,setPhoneNumber]=useState("")
-    const[Password,setPassword]=useState("")
-    const[ConfirmPassword,setConfirmPassword]=useState("")
-    const[AccountType,setAccountType]=useState("")
+    const[PhoneNumber,SetPhoneNumber]=useState("")
+    const[Password,SetPassword]=useState("")
+    const[ConfirmPassword,SetConfirmPassword]=useState("")
+    const[AccountType,SetAccountType]=useState("")
 
     //error variables
-    const[PhoneNumberError,setPhoneNumberError]=useState("")
-    const[PasswordError,setPasswordError]=useState("")
-    const[ConfirmPasswordError,setConfrimPasswordError]=useState("")
+    const[PhoneNumberError,SetPhoneNumberError]=useState("")
+    const[PasswordError,SetPasswordError]=useState("")
+    const[ConfirmPasswordError,SetConfrimPasswordError]=useState("")
     const[EmailAddressError,SetEmailAddressError]=useState("")
     const[GeneralError,SetGeneralError]=useState("")
 
     //other variables
-    const[ShowPassword,setShowPassword]=useState(false)
-    const[ShowConfirmPassword,setShowConfirmPassword]=useState(false)
-    const[isHovered, setIsHovered] = useState(false)
+    const[ShowPassword,SetShowPassword]=useState(false)
+    const[ShowConfirmPassword,SetShowConfirmPassword]=useState(false)
+    const[isHovered, SetIsHovered] = useState(false)
 
     //Functions that handle variables
     const handleFullName =(event)=>{SetFullName(event.target.value)}
     const handleEmailAddress =(event)=>{SetEmailAddress(event.target.value)}
-    const handlePhoneNumber =(event)=>{setPhoneNumber(event.target.value)}
-    const handlePassword =(event)=>{setPassword(event.target.value)}
-    const handleConfirmPassword =(event)=>{setConfirmPassword(event.target.value)}
-    const handleAccountType =(event)=>{setAccountType(event.target.value)}
+    const handlePhoneNumber =(event)=>{SetPhoneNumber(event.target.value)}
+    const handlePassword =(event)=>{SetPassword(event.target.value)}
+    const handleConfirmPassword =(event)=>{SetConfirmPassword(event.target.value)}
+    const handleAccountType =(event)=>{SetAccountType(event.target.value)}
 
     //Functions that handle other variables
-    const PasswordVisibility = ()=>{setShowPassword(!ShowPassword)}
-    const ConfirmPasswordVisibility = ()=>{setShowConfirmPassword(!ShowConfirmPassword)}
-    const HandleMouseEnter = ()=>{setIsHovered(!isHovered)}
-    const HandleMouseLeave =()=>{setIsHovered(isHovered)}
+    const PasswordVisibility = ()=>{SetShowPassword(!ShowPassword)}
+    const ConfirmPasswordVisibility = ()=>{SetShowConfirmPassword(!ShowConfirmPassword)}
+    const HandleMouseEnter = ()=>{SetIsHovered(!isHovered)}
+    const HandleMouseLeave =()=>{SetIsHovered(isHovered)}
 
     //Function that handles the form
     const handleSubmit =(event)=>{
@@ -46,22 +46,22 @@ const SignUp = () => {
         console.log("Confirm Password:", ConfirmPassword)
         console.log("Account Type:", AccountType)
         
-        setPasswordError("")
-        setConfrimPasswordError("")
-        setPhoneNumberError("")
+        SetPasswordError("")
+        SetConfrimPasswordError("")
+        SetPhoneNumberError("")
         SetEmailAddressError("")
         SetGeneralError("")
         
         let isValid = true 
         
         if (Password.length < 8) {
-            setPasswordError("Password must be at least 8 characters long")
+            SetPasswordError("Password must be at least 8 characters long")
             console.log("Password validation failed: Too short")
             isValid = false}   
         else {console.log("Password length is valid")}
 
         if (Password !== ConfirmPassword) {
-            setConfrimPasswordError("Passwords do not match")
+            SetConfrimPasswordError("Passwords do not match")
             console.log("Password confirmation failed: Passwords don't match")
             isValid = false} 
         else {console.log("Password confirmation valid")}
@@ -73,7 +73,7 @@ const SignUp = () => {
         else {console.log("Email format is valid")}
 
         if (PhoneNumber.length < 10) {
-            setPhoneNumberError("Please enter a valid phone number")
+            SetPhoneNumberError("Please enter a valid phone number")
             console.log("Phone validation failed: Too short")
             isValid = false}
         else {console.log("Phone number is valid")}
@@ -93,10 +93,10 @@ const SignUp = () => {
             
             SetFullName("")
             SetEmailAddress("")
-            setPhoneNumber("")
-            setPassword("")
-            setConfirmPassword("")
-            setAccountType("")
+            SetPhoneNumber("")
+            SetPassword("")
+            SetConfirmPassword("")
+            SetAccountType("")
             
             console.log("Form fields cleared successfully")
             console.log("=== FORM SUBMISSION COMPLETED ===")
@@ -115,7 +115,7 @@ const SignUp = () => {
                 </a>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-blue-800 dark:border-blue-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 className="text-xl font-bold leading-tight tracking-tight text-blue-700 md:text-2xl dark:text-white">Create an account</h1>
+                        <h1 className="text-xl font-bold leading-tight tracking-tight text-blue-700 md:text-2xl text-center dark:text-white">Create an account</h1>
                             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                                  <div>
                                     <label htmlFor="full-name" className="block mb-2 text-sm font-medium text-blue-700 dark:text-white">Your full name</label>
@@ -172,7 +172,7 @@ const SignUp = () => {
                                             id="password" 
                                             value ={Password}
                                             onChange={handlePassword}
-                                            placeholder="Kindly enter your password with at least 8 characters here" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                            placeholder="Kindly enter your password here" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 pr-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                                             <button
                                             type="button"
                                             onClick={PasswordVisibility}
@@ -192,7 +192,7 @@ const SignUp = () => {
                                         type={ShowConfirmPassword ? "text" : "password"} name="confirm-password" id="confirm-password"
                                         value={ConfirmPassword}
                                         onChange={handleConfirmPassword}
-                                         placeholder="Kindly confirm your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                         placeholder="Kindly confirm your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 pr-10 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                                          <button
                                             type="button"
                                             onClick={ConfirmPasswordVisibility}

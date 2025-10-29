@@ -1,11 +1,10 @@
-const App = () =>{
-  
+import SignUp from "./pages/SignUp"
 
+const App = () => {
   return (
     <>
-     <h1>App</h1>
+     <SignUp/>
     </>
   )
 }
-
 export default App

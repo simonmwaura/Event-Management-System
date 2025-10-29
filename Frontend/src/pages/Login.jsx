@@ -1,5 +1,6 @@
 import {FiMail,FiLock, FiEye, FiEyeOff,} from "react-icons/fi"
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 const Login = () => {
     //variables
@@ -18,23 +19,23 @@ const Login = () => {
     //Function that handles the form
     const handleSubmit =(event)=>{
         event.preventDefault()
-        console.log("=== FORM SUBMISSION STARTED ===")
+        toast.success("=== FORM SUBMISSION STARTED ===")
     
-        console.log("Email:", EmailAddress)
-        console.log("Password:", Password)
+        toast.success(`Email: ${EmailAddress}`)
+        toast.success(`Password: ${Password}`)
       
         
         let isValid = true 
         if (isValid) {
-            console.log("FORM IS VALID - Submitting data...")
+            toast.success("FORM IS VALID - Submitting data...")
             SetEmailAddress("")
             SetPassword("") 
-            console.log("Form fields cleared successfully")
-            console.log("=== FORM SUBMISSION COMPLETED ===")
+            toast.success("Form fields cleared successfully")
+            toast.success("=== FORM SUBMISSION COMPLETED ===")
         }
         else {
-            console.log(" FORM HAS ERRORS - Please fix before submitting")
-            console.log("=== FORM SUBMISSION STOPPED ===")}
+            toast.error(" FORM HAS ERRORS - Please fix before submitting")
+            toast.error("=== FORM SUBMISSION STOPPED ===")}
 }
 
     return (

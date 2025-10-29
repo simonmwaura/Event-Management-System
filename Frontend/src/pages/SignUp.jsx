@@ -1,5 +1,6 @@
 import {FiMail,FiPhone,FiUser,FiLock, FiChevronDown, FiBriefcase, FiEye, FiEyeOff,} from "react-icons/fi"
 import { useState } from "react"
+import { toast } from "react-toastify"
 const SignUp = () => {
     //variables
     const[FullName,SetFullName]=useState("")
@@ -32,19 +33,17 @@ const SignUp = () => {
     //Functions that handle other variables
     const PasswordVisibility = ()=>{SetShowPassword(!ShowPassword)}
     const ConfirmPasswordVisibility = ()=>{SetShowConfirmPassword(!ShowConfirmPassword)}
-    const HandleMouseEnter = ()=>{SetIsHovered(!isHovered)}
-    const HandleMouseLeave =()=>{SetIsHovered(isHovered)}
 
     //Function that handles the form
     const handleSubmit =(event)=>{
         event.preventDefault()
-        console.log("=== FORM SUBMISSION STARTED ===")
-        console.log("Full Name:", FullName)
-        console.log("Email:", EmailAddress)
-        console.log("Phone:", PhoneNumber)
-        console.log("Password:", Password)
-        console.log("Confirm Password:", ConfirmPassword)
-        console.log("Account Type:", AccountType)
+        toast.success("=== FORM SUBMISSION STARTED ===")
+        toast.success("Full Name:", FullName)
+        toast.success("Email:", EmailAddress)
+        toast.success("Phone:", PhoneNumber)
+        toast.success("Password:", Password)
+        toast.success("Confirm Password:", ConfirmPassword)
+        toast.success("Account Type:", AccountType)
         
         SetPasswordError("")
         SetConfrimPasswordError("")
@@ -56,40 +55,40 @@ const SignUp = () => {
         
         if (Password.length < 8) {
             SetPasswordError("Password must be at least 8 characters long")
-            console.log("Password validation failed: Too short")
+           toast.error("Password validation failed: Too short")
             isValid = false}   
-        else {console.log("Password length is valid")}
+        else {toast.success("Password length is valid")}
 
         if (Password !== ConfirmPassword) {
             SetConfrimPasswordError("Passwords do not match")
-            console.log("Password confirmation failed: Passwords don't match")
+           toast.error("Password confirmation failed: Passwords don't match")
             isValid = false} 
-        else {console.log("Password confirmation valid")}
+        else {toast.success("Password confirmation valid")}
 
         if (!EmailAddress.includes("@")) {
             SetEmailAddressError("Please enter a valid email address")
-            console.log("Email validation failed: Missing @")
+           toast.error("Email validation failed: Missing @")
             isValid = false} 
-        else {console.log("Email format is valid")}
+        else {toast.success("Email format is valid")}
 
         if (PhoneNumber.length < 10) {
             SetPhoneNumberError("Please enter a valid phone number")
-            console.log("Phone validation failed: Too short")
+           toast.error("Phone validation failed: Too short")
             isValid = false}
-        else {console.log("Phone number is valid")}
+        else {toast.success("Phone number is valid")}
 
         if (FullName.trim().length < 2) {
-            console.log("Full name validation failed: Too short")
+           toast.error("Full name validation failed: Too short")
             isValid = false} 
-        else {console.log("Full name is valid")}
+        else {toast.success("Full name is valid")}
 
         if (!AccountType) {
-            console.log("Account type validation failed: Not selected")
+           toast.error("Account type validation failed: Not selected")
             isValid = false} 
-        else {console.log("Account type is selected")}
+        else {toast.success("Account type is selected")}
 
         if (isValid) {
-            console.log("FORM IS VALID - Submitting data...")
+           toast.success("FORM IS VALID - Submitting data...")
             
             SetFullName("")
             SetEmailAddress("")
@@ -98,12 +97,12 @@ const SignUp = () => {
             SetConfirmPassword("")
             SetAccountType("")
             
-            console.log("Form fields cleared successfully")
-            console.log("=== FORM SUBMISSION COMPLETED ===")
+           toast.success("Form fields cleared successfully")
+           toast.success("=== FORM SUBMISSION COMPLETED ===")
         }
         else {
-            console.log(" FORM HAS ERRORS - Please fix before submitting")
-            console.log("=== FORM SUBMISSION STOPPED ===")}
+           toast.error(" FORM HAS ERRORS - Please fix before submitting")
+           toast.error("=== FORM SUBMISSION STOPPED ===")}
 }
 
     return (

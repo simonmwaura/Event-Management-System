@@ -1,6 +1,7 @@
 import {FiMail,FiPhone,FiUser,FiLock, FiChevronDown, FiBriefcase, FiEye, FiEyeOff,} from "react-icons/fi"
 import { useState } from "react"
 import { toast } from "react-toastify"
+import {Link} from "react-router-dom"
 const SignUp = () => {
     //variables
     const[FullName,SetFullName]=useState("")
@@ -28,7 +29,8 @@ const SignUp = () => {
     const handlePhoneNumber =(event)=>{SetPhoneNumber(event.target.value)}
     const handlePassword =(event)=>{SetPassword(event.target.value)}
     const handleConfirmPassword =(event)=>{SetConfirmPassword(event.target.value)}
-    const handleAccountType =(event)=>{SetAccountType(event.target.value)}
+    const handleAccountTypeOrganizer =()=>{SetAccountType("EVENT_ORGANIZER")}
+    const handleAccountTypeAttendee =() => {SetAccountType("EVENT_ATTENDEE")}
 
     //Functions that handle other variables
     const PasswordVisibility = ()=>{SetShowPassword(!ShowPassword)}
@@ -106,11 +108,15 @@ const SignUp = () => {
 }
 
     return (
-    <div className="min-h-screen bg-linear-to-br from-blue-200 to-blue-700 flex items-center justify-center p-4 ">
-        <section className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-blue-200 to-blue-700 flex items-center justify-center p-4">
+        <section className="mt-19 w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
                 <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-blue-700 dark:text-white">
-                    <img className="w-8 h-8 mr-2 " src=" Logo.png" alt="logo" />Eventium
+                    <img className="w-8 h-8 mr-2 " src=" Logo.png" alt="logo" />
+                     <div>
+                        <span className="text-blue-700">Event</span>
+                        <span className="text-blue-400">ium</span>
+                    </div>
                 </a>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-blue-800 dark:border-blue-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -126,7 +132,7 @@ const SignUp = () => {
                                         id="full-name"
                                         value={FullName}
                                         onChange={handleFullName}
-                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kindly enter your full name here" required/>
+                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your full name" required/>
                                     </div>
                                     
                                 </div>
@@ -141,7 +147,7 @@ const SignUp = () => {
                                         id="email-address" 
                                         value={EmailAddress}
                                         onChange={handleEmailAddress}
-                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kindly enter your email here" required/>
+                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email" required/>
                                     </div>
                                     
                                 </div>
@@ -156,7 +162,7 @@ const SignUp = () => {
                                          id="phone-number"
                                          value={PhoneNumber}
                                          onChange={handlePhoneNumber}
-                                         className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kindly enter your phone number here" required/>
+                                         className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number" required/>
                                     </div>
                                     
                                 </div>
@@ -171,7 +177,7 @@ const SignUp = () => {
                                             id="password" 
                                             value ={Password}
                                             onChange={handlePassword}
-                                            placeholder="Kindly enter your password here" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 pr-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                            placeholder="Enter your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 pr-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                                             <button
                                             type="button"
                                             onClick={PasswordVisibility}
@@ -191,7 +197,7 @@ const SignUp = () => {
                                         type={ShowConfirmPassword ? "text" : "password"} name="confirm-password" id="confirm-password"
                                         value={ConfirmPassword}
                                         onChange={handleConfirmPassword}
-                                         placeholder="Kindly confirm your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 pr-10 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                         placeholder="Confirm your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 pr-10 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                                          <button
                                             type="button"
                                             onClick={ConfirmPasswordVisibility}
@@ -199,28 +205,27 @@ const SignUp = () => {
                                             >
                                                 {ShowPassword ? <FiEyeOff className="w-5 h-5"/> : <FiEye className="w-5 h-5"/>}
                                             </button>
-
                                     </div>
                                    
                                 </div>
 
-                               <div>
-                                <label htmlFor="account-type" className="block mb-2 text-sm font-medium text-blue-700 dark:text-white">Select your Account Type</label>
-                                <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"> <FiBriefcase className="w-5 h-5 text-blue-400" /></div>
-                                     <select 
-                                     id="account-type"
-                                     value = {AccountType}
-                                     onChange={handleAccountType}
-                                      className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option value="EVENT_ORGANIZER">Event Organizer</option>
-                                        <option value="EVENT_ATTENDEE">Event Attendee</option>
-                                        </select>
+                               <div className="w-full">
+                                    <label className="block mb-3 text-sm font-medium text-blue-700 dark:text-white"> Select your Account Type </label>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <button type="button" onClick={handleAccountTypeOrganizer} className={`flex items-center justify-center p-3  border rounded-lg text-sm font-medium transition-colors ${ AccountType === "EVENT_ORGANIZER" ? "bg-blue-600 text-white border-blue-600": "bg-white text-blue-700 border-blue-300 hover:bg-blue-50" }`} >
+                                            <FiBriefcase className="w-5 h-5 mr-2" /> Organizer 
+                                        </button>
+                                        <button onClick={handleAccountTypeAttendee} className={`flex items-center justify-center p-3 border rounded-lg text-sm font-medium transition-colors ${AccountType === "EVENT_ATTENDEE" ? "bg-blue-600 text-white border-blue-600" : "bg-white text-blue-700 border-blue-300 hover:bg-blue-50"}`}>
+                                            <FiUser className="w-5 h-5 mr-2" /> Attendee
+                                        </button>
+                                   </div>
                                 </div>
-                               </div>
 
-                                <button type="submit" className="w-full border  py-3 px-4 text-blue-700 font-bold rounded-lg shadow-xl transition-all duration-300 hover:bg-blue-700  hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300  text-sm  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Account</button>
-                                <p className="text-sm font-light text-blue-500 dark:text-blue-400">Already have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a></p>
+                                <button type="submit" className="w-full border  py-3 px-4 text-blue-700 font-bold rounded-lg shadow-xl transition-all duration-300 hover:bg-blue-700  hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300  text-sm  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+                                <p className="text-sm text-center font-light text-blue-500 dark:text-blue-400">Already have an account? <Link to="/login" className="text-sm text-blue-500 hover:underline hover:text-blue-800 font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Login here</Link></p>
+                                 <p className="text-sm text-center">
+                                
+                                </p>
                             </form>
                     </div>
                 </div>

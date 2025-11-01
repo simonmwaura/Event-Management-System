@@ -1,6 +1,7 @@
 import {FiMail,FiLock, FiEye, FiEyeOff,} from "react-icons/fi"
 import { useState } from "react"
 import { toast } from "react-toastify"
+import {Link} from "react-router-dom"
 
 const Login = () => {
     //variables
@@ -42,12 +43,16 @@ const Login = () => {
     <div className="min-h-screen bg-linear-to-br from-blue-200 to-blue-700 flex items-center justify-center p-4 ">
         <section className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
-                <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-blue-700 dark:text-white">
-                    <img className="w-8 h-8 mr-2 " src=" Logo.png" alt="logo" />Eventium
+                <a href="#" className="flex items-center mb-6 text-2xl font-semibold  dark:text-white">
+                    <img className="w-8 h-8 mr-2 " src=" Logo.png" alt="logo" />
+                    <div>
+                        <span className="text-blue-700">Event</span>
+                        <span className="text-blue-400">ium</span>
+                    </div>
                 </a>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-blue-800 dark:border-blue-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-blue-700 md:text-2xl dark:text-white">Login into your account</h1>
+                        <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-blue-700 md:text-2xl dark:text-white underline-offset-8 ">Login into your account</h1>
                             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                                 
                                 <div>
@@ -60,7 +65,7 @@ const Login = () => {
                                         id="email-address" 
                                         value={EmailAddress}
                                         onChange={handleEmailAddress}
-                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kindly enter your email here" required/>
+                                        className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kindly enter your email" required/>
                                     </div>
                                     
                                 </div>
@@ -77,7 +82,7 @@ const Login = () => {
                                             id="password" 
                                             value ={Password}
                                             onChange={handlePassword}
-                                            placeholder="Kindly enter your password here" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                            placeholder="Kindly enter your password" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full pl-10 p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                                             <button
                                             type="button"
                                             onClick={PasswordVisibility}
@@ -91,7 +96,7 @@ const Login = () => {
 
                         
                                 <button type="submit" className="w-full border  py-3 px-4 text-blue-700 font-bold rounded-lg shadow-xl transition-all duration-300 hover:bg-blue-700  hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300  text-sm  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
-                                <p className="text-sm font-light text-blue-500 dark:text-blue-400">Don't have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Create an account here</a></p>
+                                <p className="text-sm text-center font-light text-blue-500 dark:text-blue-400">Don't have an account? <Link to="/register" className="text-sm text-blue-500 hover:underline hover:text-blue-800 font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Create an account here</Link></p>
                                  <p className="text-sm text-center">
                                 <button className="text-blue-600 hover:underline font-bold transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                                     <a href="#" className="text-sm text-blue-500 hover:underline hover:text-blue-800 font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"

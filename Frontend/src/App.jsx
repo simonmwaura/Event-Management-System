@@ -1,7 +1,8 @@
-import SignUp from "./pages/SignUp"
-import Login from "./pages/Login"
+import SignUp from "./pages/General/SignUp"
+import Login from "./pages/General/Login"
 import { BrowserRouter, Routes, Route,} from'react-router-dom';
 import Layout from "./Layout"
+import AddEvent from "./pages/Organizer/AddEvent"
 
 
 
@@ -12,11 +13,14 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
       <Route path ="/login" element={<Login/>} />
-      <Route path = "register" element = {<SignUp/>}/>
+      <Route path = "/register" element = {<SignUp/>}/>
+      <Route path ="/addevent" element ={ <AddEvent/>}/>
       </Route>
     </Routes>
     
     </BrowserRouter>
+
+   
   )
 }
 export default App

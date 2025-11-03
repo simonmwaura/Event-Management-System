@@ -34,7 +34,6 @@ const AddEvent = () =>{
             SetSelectedFileName(file.name);
         }}
  
-
     return (
     <div className="pt-23 min-h-screen bg-linear-to-br from-blue-200 to-blue-700 flex items-center justify-center p-4 py-8">
         <section className="bg-white dark:bg-blue-900 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden">
@@ -74,7 +73,6 @@ const AddEvent = () =>{
                         <div className="w-full">
                             <label htmlFor="end-date-time" className="block mb-2 text-sm font-medium text-blue-700 dark:text-white">Select Ending Date</label>
                             <div>
-
                                 <input type="date" name="end-date-time" id="end-date-time" value={End_Date_Time} onChange={Handle_End_Date_Time} className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end" required/>
                             </div>
                             
@@ -97,9 +95,7 @@ const AddEvent = () =>{
                                     <FiHome className="w-5 h-5 text-blue-400"/>
                                 </div>
                                 <input type="text" value={Venue} onChange={Handle_Venue} name="venue" id="venue" className="bg-blue-50 border border-blue-300 text-blue-700 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 pl-10 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Add event venue here" required/>
-
                             </div>
-                           
                         </div>
 
                         <div>
@@ -165,18 +161,12 @@ const AddEvent = () =>{
                                 </div>
                                  <textarea id="description" value={Description} onChange={Handle_Description} rows="8" className="block p-2.5 pl-10 w-full text-sm text-blue-700 bg-blue-50 rounded-lg border border-blue-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Add event description here" required></textarea>
                             </div>
-                            
-                           
-                            
                         </div>
-
-                        
+                  
                     </div>
-
-                    <button type="submit" className="w-full border  py-3 px-4 text-blue-700 font-bold rounded-lg shadow-xl transition-all duration-300 hover:bg-blue-700  hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300  text-sm  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                     Create Event
-                                    
-                    </button>
+                        <button type="submit" className="w-full border  py-3 px-4 text-blue-700 font-bold rounded-lg shadow-xl transition-all duration-300 hover:bg-blue-700  hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300  text-sm  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Create Event                
+                        </button>
                 </form>
             </div>
         </section>

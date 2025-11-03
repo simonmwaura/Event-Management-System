@@ -1,12 +1,12 @@
-import {Outlet} from "react-router-dom"
-import Navbar from "./Components/Navbar"
-import Footer from "./Components/Footer"
-import {ToastContainer} from "react-toastify"
+import { Outlet } from "react-router-dom"
+import AttendeeNavbar from "./AttendeeNavbar"
+import Footer from "../../Components/Footer"
+import { ToastContainer } from "react-toastify"
 
-const Layout = () => {
-    return (
+const AttendeeLayout = () => {
+    return(
         <>
-            <Navbar/>
+            <AttendeeNavbar />
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -20,9 +20,9 @@ const Layout = () => {
                 pauseOnHover
                 theme="colored" 
             />
-            <Outlet/>
-            <Footer/>
-        </>  
+            <Outlet />
+            <Footer />
+        </>
     )
 }
-export default Layout
+export default AttendeeLayout

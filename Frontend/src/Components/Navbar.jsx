@@ -3,12 +3,8 @@ import {useState} from "react"
 const Navbar = ()=>{
 
   const [HamburgerMenu,SetHamburgerMenu] = useState(false)
-
   const [user,setUser] = useState(null)
-
-  const handleHamburgerMenu = () => {
-    SetHamburgerMenu(!HamburgerMenu)
-  }
+  const handleHamburgerMenu = () => {SetHamburgerMenu(!HamburgerMenu)}
     return (
     
 <nav className="bg-white border-blue-800 dark:bg-blue-900">

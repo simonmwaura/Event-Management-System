@@ -109,7 +109,7 @@ const SignUp = () => {
 
     return (
     <div className="min-h-screen bg-linear-to-br from-blue-200 to-blue-700 flex items-center justify-center p-4">
-        <section className="mt-19 w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <section className="mt-19 mb-19 w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
                 <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-blue-700 dark:text-white">
                     <img className="w-8 h-8 mr-2 " src=" Logo.png" alt="logo" />

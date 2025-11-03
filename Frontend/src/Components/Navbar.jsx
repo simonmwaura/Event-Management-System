@@ -26,10 +26,10 @@ const Navbar = ()=>{
     <div className={`${HamburgerMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}  id="navbar-default">
       <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-blue-100 rounded-lg bg-blue-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-blue-800 md:dark:bg-blue-900 dark:border-blue-700">
         <li>
-          <a href="#" className="block py-2 px-3 text-blue-900 rounded-sm hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</a>
+          <Link to="/home" className="block py-2 px-3 text-blue-900 rounded-sm hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</Link>
         </li>
         <li>
-          <a href="#" className="block py-2 px-3 text-blue-900 rounded-sm hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          <Link to="/about-us" className="block py-2 px-3 text-blue-900 rounded-sm hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
         </li>
        
         <li>
